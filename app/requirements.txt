@@ -6,3 +6,5 @@ django-filter>=2
 pinyin
 numpy
 datetime
+redis
+celery
