@@ -43,7 +43,7 @@
 ```bash
 cd app
 python -m venv env
-source env/bin/active
+source env/bin/activate
 ```
 
 安装所有需要的包：
@@ -77,10 +77,12 @@ python manage.py migrate
 python manage.py loaddata
 ```
 
-运行：
+运行 redis，Django 和 Celery：
 
 ```bash
+systemctl start redis
 python manage.py runserver
+celery -A search worker -l info
 ```
 
-访问：[http://localhost:8000/graphql](http://localhost:8000/graphql)。
+访问：[http://localhost:8000/graphql](http://localhost:8000/graphql)，开始发起请求，请求相关见：[GRAPHQL.md](./GRAPHQL.md)
