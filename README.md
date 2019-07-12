@@ -12,51 +12,6 @@
 
 ***
 
-官方搜索：
-
-```json
-{
-  "operationName": "interviewCardSuggestions",
-  "variables": {
-    "query": "Te"
-  },
-  "query": "query interviewCardSuggestions($query: String!) {\n  interviewCardSuggestions(query: $query) {\n    id\n    isFavorite\n    isPremiumOnly\n    company {\n      slug\n      name\n      __typename\n    }\n    __typename\n  }\n}\n"
-}
-```
-
-官方 Response：
-
-```json
-{
-  "data": {
-    "interviewCardSuggestions": [
-      {
-        "id": "28",
-        "isFavorite": null,
-        "isPremiumOnly": true,
-        "company": {
-          "slug": "tencent",
-          "name": "腾讯 (Tencent)",
-          "__typename": "InterviewCompanyNode"
-        },
-        "__typename": "InterviewCardNode"
-      },
-      {
-        "id": "188",
-        "isFavorite": null,
-        "isPremiumOnly": true,
-        "company": {
-          "slug": "teambition",
-          "name": "Teambition",
-          "__typename": "InterviewCompanyNode"
-        },
-        "__typename": "InterviewCardNode"
-      }
-    ]
-  }
-}
-```
-
 ## 思路
 
 ### 数据持久化
@@ -85,42 +40,109 @@
     "model": "search.company",
     "pk": 1,
     "fields": {
-      "slug": "tencent",
-      "name": "腾讯 (Tencent)",
-      "isPremiumOnly": true,
-      "searchHitCount": 0
+      "slug": "leetcode",
+      "name": "力扣（LeetCode）",
+      "pinyin": "likou（LeetCode）",
+      "isPremiumOnly": true
     }
   },
   {
     "model": "search.company",
     "pk": 2,
     "fields": {
-      "slug": "teambition",
-      "name": "Teambition",
-      "isPremiumOnly": true,
-      "searchHitCount": 1
+      "slug": "tencent",
+      "name": "腾讯",
+      "pinyin": "tengxun",
+      "isPremiumOnly": true
     }
   },
   {
     "model": "search.company",
     "pk": 3,
     "fields": {
-      "slug": "leetcode",
-      "name": "LeetCode（力扣）",
-      "isPremiumOnly": true,
-      "searchHitCount": 1
+      "slug": "cqjtu",
+      "name": "重庆交通大学",
+      "pinyin": "zhongqingjiaotongdaxue",
+      "isPremiumOnly": true
     }
   },
   {
     "model": "search.company",
     "pk": 4,
     "fields": {
-      "slug": "microsoft",
-      "name": "Microsoft（微软）",
-      "isPremiumOnly": true,
-      "searchHitCount": 1
+      "slug": "novanetwork",
+      "name": "诺华网络",
+      "pinyin": "nuohuawangluo",
+      "isPremiumOnly": true
+    }
+  },
+  {
+    "model": "search.company",
+    "pk": 5,
+    "fields": {
+      "slug": "minecraft",
+      "name": "我的世界",
+      "pinyin": "wodeshijie",
+      "isPremiumOnly": true
+    }
+  },
+  {
+    "model": "search.company",
+    "pk": 6,
+    "fields": {
+      "slug": "google",
+      "name": "咕果科技",
+      "pinyin": "guguokeji",
+      "isPremiumOnly": true
+    }
+  },
+  {
+    "model": "search.search",
+    "pk": 1,
+    "fields": {
+      "slug": 1,
+      "week": "20190702",
+      "search_hit": 20
+    }
+  },
+  {
+    "model": "search.search",
+    "pk": 2,
+    "fields": {
+      "slug": 6,
+      "week": "20190702",
+      "search_hit": 200
+    }
+  },
+  {
+    "model": "search.search",
+    "pk": 3,
+    "fields": {
+      "slug": 4,
+      "week": "20190702",
+      "search_hit": 180
+    }
+  },
+  {
+    "model": "search.search",
+    "pk": 4,
+    "fields": {
+      "slug": 5,
+      "week": "20190702",
+      "search_hit": 180
+    }
+  },
+  {
+    "model": "search.search",
+    "pk": 5,
+    "fields": {
+      "slug": 3,
+      "week": "20190702",
+      "search_hit": 29
     }
   }
 ]
 ```
+
+
 
