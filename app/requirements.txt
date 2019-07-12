@@ -10,3 +10,4 @@ redis
 celery
 mysqlclient
 django-redis
+pytest
