@@ -55,7 +55,7 @@
 
 ```json
 query interviewCardSuggestions ($query: String){
- 	company(query:$query){
+  company(query:$query){
     id
     name
   }
@@ -97,7 +97,7 @@ query interviewCardSuggestions ($query: String){
 
 ```json
 query interviewCardSuggestions ($week: String!,$count:Int){
-	hotSearchCompanies(week:$week,topCount:$count){
+  hotSearchCompanies(week:$week,topCount:$count){
     id
     name
     isPremiumOnly

@@ -5,6 +5,9 @@ from graphene_django.types import DjangoObjectType
 
 from .models import Company,Search
 from .tasks import *
+from django.conf import settings
+from django.views.decorators.cache import cache_page
+from django.core.cache.backends.base import DEFAULT_TIMEOUT
 
 # For getting statistic year-month-week_of_month
 import numpy as np
@@ -34,6 +37,8 @@ class Query(object):
                             top_count=graphene.Int())
     all_companies = graphene.List(CompanyNode)
 
+    CACHE_TTL = getattr(settings,'CACHE_TTL',DEFAULT_TIMEOUT)
+    @cache_page(CACHE_TTL)
     def resolve_company(self,info,**kwargs):
         id = kwargs.get('id')
         query = kwargs.get('query')

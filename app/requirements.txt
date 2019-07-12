@@ -9,3 +9,4 @@ datetime
 redis
 celery
 mysqlclient
+django-redis
