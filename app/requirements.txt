@@ -11,3 +11,4 @@ celery
 mysqlclient
 django-redis
 pytest
+django-debug-toolbar

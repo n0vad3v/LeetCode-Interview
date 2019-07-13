@@ -22,6 +22,8 @@
 
 ### 数据持久化
 
+关于数据库结构以及假数据生成请参考：[DB.md](./DB.md)
+
 - MySQL 数据库 + Django loaddata 加入测试数据
 
 ### 缓存
@@ -37,6 +39,7 @@
 环境要求：
 
 * Python 3
+* MySQL，且已经设置为 `utfmb4` 编码（[Django 使用 MySQL 中文報錯](https://ignorance.nova.moe/django-mysql-encoding-error-on-chinese/)）
 
 创建好目录之后，clone 下本仓库，进入 `app` 目录后创建虚拟环境并进入：
 
@@ -73,9 +76,7 @@ python manage.py migrate
 
 导入测试数据：
 
-```bash
-python manage.py loaddata
-```
+> 参考 [DB.md](./DB.md)
 
 运行 redis，Django 和 Celery：
 

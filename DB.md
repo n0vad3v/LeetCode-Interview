@@ -15,3 +15,21 @@
 | 力扣（LeetCode） | leetcode | likou   | True          |
 | 腾讯             | tencent  | tengxun | True          |
 |                  |          |         |               |
+
+## Fake Data
+
+由于 Django 似乎没有一个好用的 Faker，所以自己写了一个用来生成假数据的脚本，默认生成 25W 条公司数据 + 25W 条公司被搜索数据（一一对应，时间为 20190702，访问数量随机生成）
+
+在 seeds 目录下：
+
+```
+python gen_company_seeds.py
+```
+
+即可开始生成假数据，文件名为：`fake_companies.json`，将此文件移动到 `app` 目录下，并使用：
+
+```
+python manage.py loaddata fake_companies.json
+```
+
+进行导入。

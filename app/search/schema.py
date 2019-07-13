@@ -30,22 +30,15 @@ class CompanyNode(DjangoObjectType):
 
 class Query(object):
     company = graphene.List(CompanyNode,
-                             pinyin=graphene.String(),
                              query=graphene.String())
     hot_search_companies = graphene.List(CompanyNode,
                             week=graphene.String(required=True),
                             top_count=graphene.Int())
     all_companies = graphene.List(CompanyNode)
 
-    CACHE_TTL = getattr(settings,'CACHE_TTL',DEFAULT_TIMEOUT)
-    @cache_page(CACHE_TTL)
     def resolve_company(self,info,**kwargs):
-        id = kwargs.get('id')
         query = kwargs.get('query')
 
-        if id is not None:
-            return Company.objects.get(pk=id)
-        
         if query is not None:
             companies = Company.objects.filter(Q(name__contains = query) | Q(slug__contains = query) | Q(pinyin__contains = query))
             for company in companies:

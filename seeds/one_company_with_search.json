@@ -1,0 +1,1 @@
+[{"model": "search.company", "pk": 1, "fields": {"slug": "novanetwork", "name": "\u8afe\u83ef\u7db2\u7d61", "pinyin": "nuohuawangluo", "isPremiumOnly": false}}, {"model": "search.search", "pk": 1, "fields": {"company_id": 1, "week": "20190702", "search_hit": 23}}]
