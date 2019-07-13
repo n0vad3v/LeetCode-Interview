@@ -10,5 +10,6 @@ redis
 celery
 mysqlclient
 django-redis
+django-redis-cache
 pytest
 django-debug-toolbar
