@@ -2,19 +2,18 @@
 
 ### Search Table
 
-| slug（ refer on Company.slug） | Week of Month                 | Hits |
-| ------------------------------ | ----------------------------- | ---- |
-| leetcode                       | 20190702(Week 2 of July 2019) | 20   |
-| leetcode                       | 20190701(Week 1 of July 2019) | 290  |
-| tencent                        | 20190701(Week 1 of July 2019) | 218  |
+| id(pk) | company_id（ refer on Company.id） | Week of Month                 | Hits |
+| ------ | ---------------------------------- | ----------------------------- | ---- |
+| 1      | 1                                  | 20190702(Week 2 of July 2019) | 20   |
+| 2      | 1                                  | 20190701(Week 1 of July 2019) | 290  |
+| 3      | 2                                  | 20190701(Week 1 of July 2019) | 218  |
 
 ### Company Table
 
-| name             | slug     | pinyin  | isPremiumOnly |
-| ---------------- | -------- | ------- | ------------- |
-| 力扣（LeetCode） | leetcode | likou   | True          |
-| 腾讯             | tencent  | tengxun | True          |
-|                  |          |         |               |
+| id(pk) | name             | slug     | pinyin  | isPremiumOnly |
+| ------ | ---------------- | -------- | ------- | ------------- |
+| 1      | 力扣（LeetCode） | leetcode | likou   | True          |
+| 2      | 腾讯             | tencent  | tengxun | True          |
 
 ## Fake Data
 

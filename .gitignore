@@ -11,6 +11,9 @@ Icon
 # Local Settings
 settings.py
 
+# Faker
+fake_companies.json
+
 # Vim
 *.swp
 
