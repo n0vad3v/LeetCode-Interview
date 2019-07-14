@@ -74,7 +74,7 @@ DATABASES = {
         'NAME': 'interview',
         'HOST': 'mysql',
         'USER': 'root',
-        'PASSWORD': 'nomoreinterview'
+        'PASSWORD': 'nomoreinterview',
 		'OPTIONS': { 'charset': 'utf8mb4' },
     },
 }
