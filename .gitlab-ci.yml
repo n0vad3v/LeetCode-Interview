@@ -6,6 +6,9 @@ variables:
   MYSQL_DATABASE: "interview"
   MYSQL_ROOT_PASSWORD: "nomoreinterview"
 
+volumes:
+  - ./ci/my.cnf:/etc/my.cnf
+
 stages:
   - test
 
