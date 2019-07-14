@@ -46,13 +46,14 @@ class Query(object):
             if cache_name in cache:
                 companies = cache.get_many([cache_name])
                 companies = companies[cache_name]
-                print("from cache")
+                print("query company " + query + " from cache")
             else:
                 companies = Company.objects.filter(Q(name__contains = query) | Q(slug__contains = query) | Q(pinyin__contains = query))
-                print("not from cache")
+                print("query company " + query + " not from cache")
                 cache.set(cache_name,companies)
 
             # Search Hit increment
+            # TODO: Optimize this interface to pass the whole queryset to the celery
             company_ids = []
             for company in companies:
                 company_ids.append(company.id)

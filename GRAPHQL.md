@@ -54,7 +54,7 @@
 对于公司的搜索，支持模糊搜索（关键词为：名称，slug 和 拼音（通过 pinyin 库生成）），搜索的 Query 为：
 
 ```json
-query interviewCardSuggestions ($query: String){
+query interviewCardSuggestions ($query: String!){
   company(query:$query){
     id
     name

@@ -9,8 +9,8 @@ def update_search_hit_count(company_ids,query_week):
     for company_id in company_ids:
         company = Company.objects.get(pk=company_id)
         print(company.name)
+        # TODO: Optimize with bulk update: https://docs.djangoproject.com/en/2.1/topics/db/queries/#updating-multiple-objects-at-once
         search_log_row = Search.objects.get(company_id__id=company_id,week=query_week)
-        print(search_log_row.search_hit)
         new_search_hit = search_log_row.search_hit + 1
         search_log_row.search_hit = new_search_hit
         search_log_row.save()
