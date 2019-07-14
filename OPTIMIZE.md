@@ -39,3 +39,10 @@
 
 * 每次搜索后将修改数据库的操作放在 Celery 的 task 中进行，让 Celery 来顺序执行以减轻对于数据库的压力。**（已完成）**
 * 后期可能的话甚至可以设置为定期执行（比如每小时，或者每天凌晨统一执行一遍，类似目前 rank 的操作，参考 LeetCode 员工 xidui 对于 ranklist 的描述——[一个隐藏在黑客迷雾下的bug——记一次黑客攻防 | xidui is very lazy](https://xidui.github.io/2017/03/29/%E4%B8%80%E4%B8%AA%E8%97%8F%E5%8C%BF%E5%9C%A8%E9%BB%91%E5%AE%A2%E8%BF%B7%E9%9B%BE%E4%B8%8B%E7%9A%84bug/)）
+
+### GitLab CI 对于 MySQL 支持不好
+
+暂时没有时间去自己做一个 MySQL 镜像，如果使用官方的 MySQL 似乎无法手动导入 `my.cnf` 文件，就会遇到中文问题，暂时使用 SQLite 作为 CI 测试使用。
+
+![](./images/gitlab-ci.png)
+

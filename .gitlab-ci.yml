@@ -1,5 +1,5 @@
 services:
-      - redis:latest
+  - redis:latest
 
 stages:
   - test
