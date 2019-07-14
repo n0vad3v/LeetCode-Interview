@@ -1,5 +1,5 @@
 services:
-  - mysql:latest
+  - mysql:5.7
 
 variables:
   # Configure mysql environment variables (https://hub.docker.com/_/mysql/)
