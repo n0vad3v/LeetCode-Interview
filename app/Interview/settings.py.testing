@@ -75,6 +75,8 @@ DATABASES = {
         'HOST': 'mysql',
         'USER': 'root',
         'PASSWORD': 'nomoreinterview'
+		'default-character-set': 'utf8',
+		'OPTIONS': { 'charset': 'utf8mb4' },
     },
 }
 
