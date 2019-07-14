@@ -34,8 +34,8 @@ class Query(object):
                              query=graphene.String(required=True))
     hot_search_companies = graphene.List(CompanyNode,
                             week=graphene.String(required=True),
-                            top_count=graphene.Int())
-    all_companies = graphene.List(CompanyNode)
+                            top_count=graphene.Int(required=True))
+    #all_companies = graphene.List(CompanyNode)
 
     def resolve_company(self,info,**kwargs):
         query = kwargs.get('query')
@@ -67,7 +67,7 @@ class Query(object):
         week = kwargs.get('week')
         top_count = kwargs.get('top_count')
 
-        cache_name = "hot_search_"+week+"_"+"top_count"
+        cache_name = "hot_search_" + week + "_" + str(top_count)
 
         if week is not None:
             if cache_name in cache:

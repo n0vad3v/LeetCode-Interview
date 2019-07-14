@@ -96,7 +96,7 @@ query interviewCardSuggestions ($query: String!){
 完成对于某一周被搜索次数最多的公司的查询。
 
 ```json
-query interviewCardSuggestions ($week: String!,$count:Int){
+query interviewCardSuggestions ($week: String!,$count:Int!){
   hotSearchCompanies(week:$week,topCount:$count){
     id
     name
@@ -105,7 +105,7 @@ query interviewCardSuggestions ($week: String!,$count:Int){
 }
 ```
 
-其中，需要传入的 Variable 为，其中，`week` 为必须项（避免忘了写（或者被估计攻击） `week` 被一瞬查询出所有结果），`count` 为非必须项，留空则查询所有公司（个人感觉公司不会非常非常多，所以这里允许留空）。
+其中，需要传入的 Variable 为如下，其中，`week` 为必须项（避免忘了写（或者被估计攻击） `week` 被一瞬查询出所有结果），~~`count` 为非必须项，留空则查询所有公司（个人感觉公司不会非常非常多，所以这里允许留空）~~ `count` 也为必须项目。
 
 ```json
 {
