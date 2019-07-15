@@ -42,11 +42,18 @@ class GraphQLTestCase(TestCase):
         """
         variables = {"query":"go"}
         resp = self.query(query,None,variables)
-        self.assertResponseNoErrors(resp,{'company': [{'id': '2', 'name': '咕果'}]})
+        company = Company.objects.all()
+        self.assertResponseNoErrors(resp,{'company': [{'id': '4', 'name': '咕果'}]})
 
-    def test_search(self):
+    def test_search_hit_plus(self):
+        self.test_search()
+        google_object = Search.objects.get(pk=5)
+        self.assertEqual(google_object.search_hit,234)
+
+
+    def test_hot_search(self):
         query = """
-        query interviewCardSuggestions ($week: String!,$count:Int){
+        query interviewCardSuggestions ($week: String!,$count:Int!){
           hotSearchCompanies(week:$week,topCount:$count){
             id
             name
