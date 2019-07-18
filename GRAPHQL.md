@@ -53,7 +53,7 @@
 
 对于公司的搜索，支持模糊搜索（关键词为：名称，slug 和 拼音（通过 pinyin 库生成）），搜索的 Query 为：
 
-```json
+```
 query interviewCardSuggestions ($query: String!){
   company(query:$query){
     id
@@ -95,7 +95,7 @@ query interviewCardSuggestions ($query: String!){
 
 完成对于某一周被搜索次数最多的公司的查询。
 
-```json
+```
 query interviewCardSuggestions ($week: String!,$count:Int!){
   hotSearchCompanies(week:$week,topCount:$count){
     id
